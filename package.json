@@ -1,0 +1,28 @@
+{
+  "name": "chart-stocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "http": "0.0.0",
+    "mongoose": "^5.2.17",
+    "react-vis": "^1.11.2",
+    "request": "^2.88.0",
+    "socket.io": "^2.1.1",
+    "sweetalert2-react": "^0.7.2"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  }
+}

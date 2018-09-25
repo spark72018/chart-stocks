@@ -1,0 +1,14 @@
+.chip {
+    font-weight: bold;
+}
+
+form button {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#tooltip {
+    background-color: black;
+    width: 100px;
+    position: absolute;
+}

@@ -13,6 +13,8 @@ import AddStocks from './components/AddStocks';
 import StockChips from './components/StockChips';
 import './App.css';
 
+console.log('API_URI IS', API_URI);
+
 class App extends Component {
   state = {
     currentStocks: null,

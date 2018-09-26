@@ -38,6 +38,8 @@ class App extends Component {
     socket.on('addError', this.handleAddError);
   };
 
+  resetToolTipCoords = () => this.setState({ toolTipCoords: null });
+
   handleAddError = () => this.setState({ addError: true });
 
   handleAlreadyAdded = () => {
@@ -159,10 +161,13 @@ class App extends Component {
   handleMouseMove = e => {
     const { clientX, clientY } = e;
 
+    const xCoordAlignedWithPointer = clientX - 275;
+    const yCoordAlignedWithPointer = clientY - 5;
+
     return this.setState({
       toolTipCoords: {
-        x: clientX,
-        y: clientY
+        x: xCoordAlignedWithPointer,
+        y: yCoordAlignedWithPointer
       }
     });
   };
@@ -186,6 +191,7 @@ class App extends Component {
           tickValues={tickValues}
           crosshairValues={crosshairValues}
           resetCrosshairValues={this.resetCrosshairValues}
+          resetToolTipCoords={this.resetToolTipCoords}
           makeToolTipContent={this.makeToolTipContent}
           makeAllLineSeries={this.makeAllLineSeries}
           handleMouseMove={this.handleMouseMove}

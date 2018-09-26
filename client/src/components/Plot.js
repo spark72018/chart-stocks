@@ -15,6 +15,7 @@ export default function Plot({
   tickValues,
   crosshairValues,
   resetCrosshairValues,
+  resetToolTipCoords,
   makeToolTipContent,
   makeAllLineSeries,
   handleMouseMove
@@ -22,7 +23,10 @@ export default function Plot({
   return currentStocks ? (
     <FlexibleWidthXYPlot
       onMouseMove={handleMouseMove}
-      onMouseLeave={resetCrosshairValues}
+      onMouseLeave={() => {
+        resetCrosshairValues();
+        resetToolTipCoords();
+      }}
       xType="ordinal"
       height={400}
     >

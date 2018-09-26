@@ -20,8 +20,11 @@ export default function Plot({
   makeAllLineSeries,
   handleMouseMove
 }) {
+  const margin = { left: 100, right: 100 };
+
   return currentStocks ? (
     <FlexibleWidthXYPlot
+      margin={margin}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => {
         resetCrosshairValues();

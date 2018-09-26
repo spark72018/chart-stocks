@@ -7,19 +7,16 @@ import getChartData from './utilityFns/getChartData';
 import isAnEighthIndex from './utilityFns/isAnEighthIndex';
 import getDateValue from './utilityFns/getDateValue';
 import replacePeriodsWith from './utilityFns/replacePeriodsWith';
-import { API_URI } from './constants';
 import Plot from './components/Plot';
 import AddStocks from './components/AddStocks';
 import StockChips from './components/StockChips';
 import './App.css';
 
-console.log('API_URI IS', API_URI);
-
 class App extends Component {
   state = {
     currentStocks: null,
     inputVal: '',
-    socket: io(API_URI),
+    socket: io(),
     alreadyAdded: false,
     addError: false,
     crosshairValues: [],
